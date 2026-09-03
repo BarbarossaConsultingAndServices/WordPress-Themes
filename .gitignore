@@ -1,0 +1,23 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Node (not used now, reserved if Sass/Tailwind added later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# WordPress
+*.sql
+wp-config.php
+.sass-cache/
+
+# Build artifacts (keep source, ignore zips locally - CI builds them)
+*.zip
+*.tar.gz
+
+# Screenshots source
+screenshot-raw.*

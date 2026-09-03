@@ -1,0 +1,33 @@
+name: Build theme ZIPs
+
+on:
+  push:
+    tags:
+      - "v*"
+    paths:
+      - "themes/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate theme.json files
+        run: |
+          for t in nova-business educalite newsline; do
+            echo "== $t theme.json =="
+            python3 -m json.tool themes/$t/theme.json > /dev/null
+            for s in themes/$t/styles/*.json; do echo "-- $s"; python3 -m json.tool "$s" > /dev/null; done
+          done
+      - name: Build ZIPs
+        run: |
+          mkdir -p dist
+          for t in nova-business educalite newsline; do
+            (cd themes && zip -r ../dist/$t.zip $t -x "*/inc/demo-content/*")
+          done
+          ls -lh dist/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: theme-zips
+          path: dist/*.zip

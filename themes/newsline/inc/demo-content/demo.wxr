@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+<title>Newsline Demo</title>
+<wp:wxr_version>1.2</wp:wxr_version>
+<item><title>Home</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"newsline/front-page"} /-->]]></content:encoded></item>
+<item><title>About</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"newsline/about"} /-->]]></content:encoded></item>
+<item><title>Newsletter</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"newsline/newsletter"} /-->]]></content:encoded></item>
+<item><title>Contact</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"newsline/contact"} /-->]]></content:encoded></item>
+</channel>
+</rss>

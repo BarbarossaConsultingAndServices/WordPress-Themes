@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+<title>Nova Business Demo</title>
+<wp:wxr_version>1.2</wp:wxr_version>
+<wp:base_site_url>http://example.com</wp:base_site_url>
+<wp:author><wp:author_login>admin</wp:author_login><wp:author_email>admin@example.com</wp:author_email><wp:author_display_name>Admin</wp:author_display_name></wp:author><wp:category><wp:cat_name>News</wp:cat_name><wp:category_nicename>news</wp:category_nicename></wp:category>
+<item><title>Home</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"nova-business/home"} /-->]]></content:encoded></item>
+<item><title>About</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"nova-business/about"} /-->]]></content:encoded></item>
+<item><title>Services</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"nova-business/services"} /-->]]></content:encoded></item>
+<item><title>Pricing</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"nova-business/pricing"} /-->]]></content:encoded></item>
+<item><title>FAQ</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"nova-business/faq"} /-->]]></content:encoded></item>
+<item><title>Contact</title><wp:post_type>page</wp:post_type><wp:status>publish</wp:status><content:encoded><![CDATA[<!-- wp:pattern {"slug":"nova-business/contact"} /-->]]></content:encoded></item>
+<item><title>Hello world</title><wp:post_type>post</wp:post_type><wp:status>publish</wp:status><category domain="category" nicename="news"><![CDATA[News]]></category><content:encoded><![CDATA[<p>Welcome to Nova Business. Edit this post in Gutenberg.</p>]]></content:encoded></item>
+</channel>
+</rss>
