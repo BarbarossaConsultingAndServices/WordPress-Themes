@@ -1,5 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+require_once get_stylesheet_directory() . '/inc/setup-content.php';
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
