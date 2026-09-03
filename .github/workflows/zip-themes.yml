@@ -1,12 +1,13 @@
-name: Build theme ZIPs
+name: Build and release theme ZIPs
 
 on:
   push:
     tags:
       - "v*"
-    paths:
-      - "themes/**"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -24,10 +25,17 @@ jobs:
         run: |
           mkdir -p dist
           for t in nova-business educalite newsline; do
-            (cd themes && zip -r ../dist/$t.zip $t -x "*/inc/demo-content/*")
+            (cd themes && zip -r ../dist/$t.zip $t -x "*.DS_Store*")
           done
           ls -lh dist/
+          for z in dist/*.zip; do echo "--- $z"; unzip -l "$z" | head -n 12; done
       - uses: actions/upload-artifact@v4
         with:
           name: theme-zips
           path: dist/*.zip
+      - name: Attach ZIPs to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
