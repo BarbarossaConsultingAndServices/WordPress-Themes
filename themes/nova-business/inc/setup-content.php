@@ -101,6 +101,17 @@ function nova_business_import_photo( $filename, $title ) {
 function nova_business_ensure_page( $slug, $title, $pattern = null, $photo = null ) {
 	$existing = get_page_by_path( $slug );
 	if ( $existing ) {
+		// Publish untouched drafts (e.g. WordPress installs a draft
+		// "Privacy Policy" page) so no URL ends in a 404.
+		if ( 'publish' !== $existing->post_status ) {
+			wp_update_post(
+				array(
+					'ID'           => $existing->ID,
+					'post_status'  => 'publish',
+					'post_content' => $pattern ? nova_business_pattern_content( $pattern ) : $existing->post_content,
+				)
+			);
+		}
 		return (int) $existing->ID;
 	}
 
@@ -115,6 +126,12 @@ function nova_business_ensure_page( $slug, $title, $pattern = null, $photo = nul
 		)
 	);
 
+	if ( $page_id && $pattern ) {
+		// Pattern pages carry their own designed headline: hide the
+		// automatic template title to avoid duplicate H1 headings.
+		update_post_meta( $page_id, '_wp_page_template', 'page-no-title' );
+	}
+
 	if ( $page_id && $photo ) {
 		$att_id = nova_business_import_photo( $photo, $title );
 		if ( $att_id ) {
@@ -123,6 +140,24 @@ function nova_business_ensure_page( $slug, $title, $pattern = null, $photo = nul
 	}
 
 	return (int) $page_id;
+}
+
+/**
+ * Get a category ID by name, creating it if missing (frontend-safe).
+ *
+ * @param string $name Category name.
+ * @return int Category ID.
+ */
+function nova_business_ensure_category( $name ) {
+	$existing = term_exists( $name, 'category' );
+	if ( $existing ) {
+		return (int) $existing['term_id'];
+	}
+	$created = wp_insert_term( $name, 'category' );
+	if ( is_wp_error( $created ) ) {
+		return 0;
+	}
+	return (int) $created['term_id'];
 }
 
 /**
@@ -157,8 +192,8 @@ function nova_business_build_demo_site() {
 	}
 
 	// 3. Categories + sample posts with finished articles.
-	$cat_guides = wp_create_category( 'Guides' );
-	$cat_news   = wp_create_category( 'Studio news' );
+	$cat_guides = nova_business_ensure_category( 'Guides' );
+	$cat_news   = nova_business_ensure_category( 'Studio news' );
 
 	$posts = array(
 		array(

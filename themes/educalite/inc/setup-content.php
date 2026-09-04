@@ -78,6 +78,17 @@ function educalite_import_photo( $filename, $title ) {
 function educalite_ensure_page( $slug, $title, $pattern = null, $photo = null ) {
 	$existing = get_page_by_path( $slug );
 	if ( $existing ) {
+		// Publish untouched drafts (e.g. WordPress installs a draft
+		// "Privacy Policy" page) so no URL ends in a 404.
+		if ( 'publish' !== $existing->post_status ) {
+			wp_update_post(
+				array(
+					'ID'           => $existing->ID,
+					'post_status'  => 'publish',
+					'post_content' => $pattern ? educalite_pattern_content( $pattern ) : $existing->post_content,
+				)
+			);
+		}
 		return (int) $existing->ID;
 	}
 
@@ -91,6 +102,12 @@ function educalite_ensure_page( $slug, $title, $pattern = null, $photo = null ) 
 		)
 	);
 
+	if ( $page_id && $pattern ) {
+		// Pattern pages carry their own designed headline: hide the
+		// automatic template title to avoid duplicate H1 headings.
+		update_post_meta( $page_id, '_wp_page_template', 'page-no-title' );
+	}
+
 	if ( $page_id && $photo ) {
 		$att_id = educalite_import_photo( $photo, $title );
 		if ( $att_id ) {
@@ -101,6 +118,27 @@ function educalite_ensure_page( $slug, $title, $pattern = null, $photo = null ) 
 	return (int) $page_id;
 }
 
+/**
+ * Get a category ID by name, creating it if missing (frontend-safe).
+ *
+ * @param string $name Category name.
+ * @return int Category ID.
+ */
+function educalite_ensure_category( $name ) {
+	$existing = term_exists( $name, 'category' );
+	if ( $existing ) {
+		return (int) $existing['term_id'];
+	}
+	$created = wp_insert_term( $name, 'category' );
+	if ( is_wp_error( $created ) ) {
+		return 0;
+	}
+	return (int) $created['term_id'];
+}
+
+/**
+ * Build the complete demo site. Idempotent — never touches existing content.
+ */
 function educalite_build_demo_site() {
 	$pages = array(
 		'home'           => array( 'Home', 'home', 'hero-campus.jpg' ),
@@ -129,8 +167,8 @@ function educalite_build_demo_site() {
 		}
 	}
 
-	$cat_tips = wp_create_category( 'Study tips' );
-	$cat_news = wp_create_category( 'School news' );
+	$cat_tips = educalite_ensure_category( 'Study tips' );
+	$cat_news = educalite_ensure_category( 'School news' );
 
 	$posts = array(
 		array(

@@ -1,0 +1,23 @@
+{
+  "name": "themes",
+  "version": "1.0.0",
+  "description": "Modern, fast, 100% Gutenberg-editable WordPress block themes (Full Site Editing) by [Barbarossa Consulting and Services](https://github.com/BarbarossaConsultingAndServices).",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarbarossaConsultingAndServices/WordPress-Themes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BarbarossaConsultingAndServices/WordPress-Themes/issues"
+  },
+  "homepage": "https://github.com/BarbarossaConsultingAndServices/WordPress-Themes#readme"
+}
