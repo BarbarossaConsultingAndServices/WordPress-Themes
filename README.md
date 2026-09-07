@@ -13,6 +13,7 @@ Anyone can use these themes for free under GPL-2.0-or-later.
 | **Newsline** | News / Magazine / Blog | `themes/newsline` | Paper + Red + Black |
 | **Ember Oak** | Restaurant / Café / Bar | `themes/ember-oak` | Cream + Ember, Fraunces |
 | **Juniper House** | Boutique Hotel / B&B | `themes/juniper-house` | Linen + Pine, Cormorant |
+| **Forge Studio** | Fitness Studio / Gym | `themes/forge-studio` | Coal + Volt, Oswald |
 
 Each theme ships as a **complete website out of the box** — activating it builds everything automatically:
 - Finished pages with real copy + bundled photos (e.g. Business: Home, About, Services, Pricing, FAQ, Contact, Privacy, Imprint)
