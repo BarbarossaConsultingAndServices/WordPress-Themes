@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate theme.json files
         run: |
-          for t in nova-business educalite newsline ember-oak juniper-house forge-studio; do
+          for t in nova-business educalite newsline ember-oak juniper-house forge-studio wag-stay; do
             echo "== $t theme.json =="
             python3 -m json.tool themes/$t/theme.json > /dev/null
             for s in themes/$t/styles/*.json; do echo "-- $s"; python3 -m json.tool "$s" > /dev/null; done
@@ -24,7 +24,7 @@ jobs:
       - name: Build ZIPs
         run: |
           mkdir -p dist
-          for t in nova-business educalite newsline ember-oak juniper-house forge-studio; do
+          for t in nova-business educalite newsline ember-oak juniper-house forge-studio wag-stay; do
             (cd themes && zip -r ../dist/$t.zip $t -x "*.DS_Store*")
           done
           ls -lh dist/
