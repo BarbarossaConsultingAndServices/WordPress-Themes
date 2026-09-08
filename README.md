@@ -15,6 +15,7 @@ Anyone can use these themes for free under GPL-2.0-or-later.
 | **Juniper House** | Boutique Hotel / B&B | `themes/juniper-house` | Linen + Pine, Cormorant |
 | **Forge Studio** | Fitness Studio / Gym | `themes/forge-studio` | Coal + Volt, Oswald |
 | **Wag Stay** | Pet Boarding & Daycare | `themes/wag-stay` | Cream + Terracotta, Nunito |
+| **Haven Estates** | Real Estate Agency | `themes/haven-estates` | Warm White + Navy/Brass, Playfair |
 
 Each theme ships as a **complete website out of the box** — activating it builds everything automatically:
 - Finished pages with real copy + bundled photos (e.g. Business: Home, About, Services, Pricing, FAQ, Contact, Privacy, Imprint)
@@ -30,7 +31,7 @@ How it works: on activation (`after_switch_theme`), `inc/setup-content.php` crea
 
 ## Install (no coding, 2 minutes)
 
-1. Go to **Releases** on this repo → download `nova-business.zip` (or `educalite.zip`, `newsline.zip`).
+1. Go to **Releases** on this repo → download the ZIP of the theme you want (e.g. `haven-estates.zip`).
 2. In WordPress: Appearance → Themes → Add New → Upload Theme → choose the ZIP → Activate.
 3. The full demo site (pages, posts, menu, homepage) is created automatically on activation.
 4. Go to Appearance → Editor to edit everything visually.
