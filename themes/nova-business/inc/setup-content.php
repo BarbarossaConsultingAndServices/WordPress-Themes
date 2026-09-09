@@ -111,6 +111,12 @@ function nova_business_ensure_page( $slug, $title, $pattern = null, $photo = nul
 					'post_content' => $pattern ? nova_business_pattern_content( $pattern ) : $existing->post_content,
 				)
 			);
+			if ( $pattern ) {
+				// Fresh installs ship a draft "Privacy Policy" page: it gets
+				// our designed content, so it also needs the no-title
+				// template to avoid a duplicate H1 from the theme title.
+				update_post_meta( $existing->ID, '_wp_page_template', 'page-no-title' );
+			}
 		}
 		return (int) $existing->ID;
 	}
