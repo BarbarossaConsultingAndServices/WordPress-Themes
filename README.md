@@ -17,6 +17,7 @@ Anyone can use these themes for free under GPL-2.0-or-later.
 | **Wag Stay** | Pet Boarding & Daycare | `themes/wag-stay` | Cream + Terracotta, Nunito |
 | **Haven Estates** | Real Estate Agency | `themes/haven-estates` | Warm White + Navy/Brass, Playfair |
 | **Vitalia Clinic** | Medical Clinic | `themes/vitalia-clinic` | Clean White + Teal/Blue, Source Serif |
+| **Evermore Weddings** | Wedding Planner & Venue | `themes/evermore-weddings` | Ivory + Rosewood/Gold, Didot serif |
 
 Each theme ships as a **complete website out of the box** — activating it builds everything automatically:
 - Finished pages with real copy + bundled photos (e.g. Business: Home, About, Services, Pricing, FAQ, Contact, Privacy, Imprint)
