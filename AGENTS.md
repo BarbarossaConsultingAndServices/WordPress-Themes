@@ -33,4 +33,4 @@ is a **public** repository of 13 GPL WordPress block themes.
 - Palettes: `docs/palettes.md` (stale for themes after the first three; the
   per-theme `styles/*.json` are authoritative).
 - Release workflow: `.github/workflows/zip-themes.yml`.
-- Cross-project handover: `../plans/HANDOVER-2026-10.md`.
+- Cross-project handover: `../mypet-suite-plans/HANDOVER-2026-10.md`.
