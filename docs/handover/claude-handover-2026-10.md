@@ -57,9 +57,10 @@ vanilla CSS — no page builder, no jQuery, no build step.
 ## 4. Current state
 
 - Public repo: `BarbarossaConsultingAndServices/WordPress-Themes`.
-- **24 commits**, 3 Sep → 17 Sep 2026; latest release **v1.11.0**
+- **25 commits** (24 content commits, 3 Sep → 17 Sep 2026, plus this handover);
+  latest release **v1.11.0**
   (17 Sep 2026) with all 13 ZIPs attached.
-- Clean working tree. 706 tracked files; the repo is large (~74 MB `.git`)
+- Clean working tree. 708 tracked files (706 before this handover); the repo is large (~74 MB `.git`)
   because every theme carries its own bundled images.
 - All 13 `theme.json` files and their style variations validate.
 - The release workflow was updated on 17 Sep to use the `gh` CLI instead of the
