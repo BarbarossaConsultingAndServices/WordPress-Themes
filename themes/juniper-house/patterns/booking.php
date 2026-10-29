@@ -29,9 +29,11 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <p>Arrival, departure, room type, guests, and anything we should know (dog? anniversary? 5:00 hiking start?). We confirm personally within a few hours, 8:00–21:00.</p>
 <!-- /wp:paragraph --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Install the free FluentForms or Contact Form 7 plugin and paste your booking form shortcode here, e.g.:</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --><!-- wp:paragraph -->
+<!-- /wp:shortcode -->
+<?php endif; ?><!-- wp:paragraph -->
 <p>Prefer a voice? <a href="tel:+15550102030"><strong>+1 (555) 010-2030</strong></a> — Lena or Tom pick up themselves.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

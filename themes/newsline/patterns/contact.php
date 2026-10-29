@@ -26,9 +26,11 @@
 <h2 class="wp-block-heading has-x-large-font-size">Send a tip</h2>
 <!-- /wp:heading --><!-- wp:paragraph -->
 <p>What, where, when — photos and documents help. Add your form shortcode here (FluentForms or Contact Form 7, both free):</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --></div>
+<!-- /wp:shortcode -->
+<?php endif; ?></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 

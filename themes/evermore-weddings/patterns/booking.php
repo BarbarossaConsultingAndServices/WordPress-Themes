@@ -30,9 +30,11 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <p>Preferred date, backup date, guest count and vibe — garden, chapel, ballroom or “surprise us”.</p>
 <!-- /wp:paragraph --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Install the free FluentForms or Contact Form 7 plugin and paste your form shortcode here, e.g.:</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --><!-- wp:paragraph -->
+<!-- /wp:shortcode -->
+<?php endif; ?><!-- wp:paragraph -->
 <p>Prefer to talk? <a href="tel:+15550274410"><strong>+1 (555) 027-4410</strong></a> — Mon–Fri 9:00–18:00.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

@@ -29,9 +29,11 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <p>Date, time, party size, phone number — we confirm by SMS within the hour (during opening times).</p>
 <!-- /wp:paragraph --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Install the free FluentForms, Contact Form 7 or a booking plugin (e.g. Five-Star Reservations) and paste the shortcode here, e.g.:</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --><!-- wp:paragraph -->
+<!-- /wp:shortcode -->
+<?php endif; ?><!-- wp:paragraph -->
 <p>In a hurry? Call <a href="tel:+15550102030"><strong>+1 (555) 010-2030</strong></a> — if we don’t pick up, we’re plating; leave a message.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

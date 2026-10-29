@@ -40,9 +40,11 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <h2 class="wp-block-heading has-large-font-size">Send your matter</h2>
 <!-- /wp:heading --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Two minutes. We reply within one business day.</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --></div>
+<!-- /wp:shortcode -->
+<?php endif; ?></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

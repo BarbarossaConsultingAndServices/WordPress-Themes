@@ -30,9 +30,11 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <p>Your name, phone, department and preferred time — plus symptoms or wishes we should know.</p>
 <!-- /wp:paragraph --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Install the free FluentForms or Contact Form 7 plugin and paste your form shortcode here, e.g.:</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --><!-- wp:paragraph -->
+<!-- /wp:shortcode -->
+<?php endif; ?><!-- wp:paragraph -->
 <p>In a hurry? <a href="tel:+15550193344"><strong>+1 (555) 019-3344</strong></a> — reception answers Mon–Fri 8:00–18:00, Sat 9:00–13:00.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
