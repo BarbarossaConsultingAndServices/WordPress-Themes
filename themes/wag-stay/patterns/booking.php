@@ -29,9 +29,11 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <p>Pet’s name, species, dates, service — plus quirks we should know (medication, fears, favorite toy).</p>
 <!-- /wp:paragraph --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Install the free FluentForms or Contact Form 7 plugin and paste your form shortcode here, e.g.:</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --><!-- wp:paragraph -->
+<!-- /wp:shortcode -->
+<?php endif; ?><!-- wp:paragraph -->
 <p>In a hurry? <a href="tel:+15550102030"><strong>+1 (555) 010-2030</strong></a> — a human answers 7:00–19:00.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

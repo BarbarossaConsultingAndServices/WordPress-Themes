@@ -65,7 +65,9 @@ $uri = esc_url( get_stylesheet_directory_uri() ) . '/assets/images/';
 <p class="has-text-align-center">Tell us your role and availability — the volunteer team replies within two days.</p>
 <!-- /wp:paragraph -->
 
+<?php if ( shortcode_exists( 'fluentform' ) ) : ?>
 <!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --></div>
+<!-- /wp:shortcode -->
+<?php endif; ?></div>
 <!-- /wp:group -->

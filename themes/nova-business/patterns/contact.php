@@ -28,9 +28,11 @@
 <p>Three lines are enough: what you do, what the site should achieve, and when you need it. We take it from there.</p>
 <!-- /wp:paragraph --><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">Install the free FluentForms or Contact Form 7 plugin, then replace this text with your form shortcode, e.g.:</p>
-<!-- /wp:paragraph --><!-- wp:shortcode -->
+<!-- /wp:paragraph --><?php if ( shortcode_exists( 'fluentform' ) ) : ?>
+<!-- wp:shortcode -->
 [fluentform id="1"]
-<!-- /wp:shortcode --><!-- wp:buttons -->
+<!-- /wp:shortcode -->
+<?php endif; ?><!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="mailto:hello@example.com">Or email hello@example.com</a></div>
 <!-- /wp:button --></div>
